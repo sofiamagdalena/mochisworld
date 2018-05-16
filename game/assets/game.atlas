@@ -1,0 +1,131 @@
+animations {
+  id: "walk"
+  images {
+    image: "/game/assets/images/move.png"
+  }
+  images {
+    image: "/game/assets/images/move1.png"
+  }
+  images {
+    image: "/game/assets/images/move2.png"
+  }
+  images {
+    image: "/game/assets/images/move4.png"
+  }
+  images {
+    image: "/game/assets/images/move5.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "jump"
+  images {
+    image: "/game/assets/images/jump.png"
+  }
+  images {
+    image: "/game/assets/images/jump10.png"
+  }
+  images {
+    image: "/game/assets/images/jump2.png"
+  }
+  images {
+    image: "/game/assets/images/jump3.png"
+  }
+  images {
+    image: "/game/assets/images/jump4.png"
+  }
+  images {
+    image: "/game/assets/images/jump5.png"
+  }
+  images {
+    image: "/game/assets/images/jump6.png"
+  }
+  images {
+    image: "/game/assets/images/jump8.png"
+  }
+  images {
+    image: "/game/assets/images/jump9.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "idle"
+  images {
+    image: "/game/assets/images/idle1.png"
+  }
+  images {
+    image: "/game/assets/images/idle2.png"
+  }
+  images {
+    image: "/game/assets/images/idle3.png"
+  }
+  images {
+    image: "/game/assets/images/idle4.png"
+  }
+  images {
+    image: "/game/assets/images/idle5.png"
+  }
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 2
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "fall"
+  images {
+    image: "/game/assets/images/fall.png"
+  }
+  images {
+    image: "/game/assets/images/fall2.png"
+  }
+  images {
+    image: "/game/assets/images/fall3.png"
+  }
+  images {
+    image: "/game/assets/images/fall4.png"
+  }
+  images {
+    image: "/game/assets/images/fall5.png"
+  }
+  images {
+    image: "/game/assets/images/fall6.png"
+  }
+  images {
+    image: "/game/assets/images/fall7.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "duck"
+  images {
+    image: "/game/assets/images/hide.png"
+  }
+  images {
+    image: "/game/assets/images/hide2.png"
+  }
+  images {
+    image: "/game/assets/images/hide3.png"
+  }
+  images {
+    image: "/game/assets/images/hide4.png"
+  }
+  images {
+    image: "/game/assets/images/hide5.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 8
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
