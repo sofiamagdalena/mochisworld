@@ -328,5 +328,8 @@ layers {
   name: "text"
 }
 material: "/builtins/materials/gui.material"
+layouts {
+  name: "Landscape"
+}
 adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512

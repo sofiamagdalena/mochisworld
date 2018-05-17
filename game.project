@@ -10,7 +10,7 @@ main_collection = /main/main.collectionc
 game_binding = /input/game.input_bindingc
 
 [physics]
-scale = 0.2
+scale = 1.0
 
 [script]
 shared_state = 1
@@ -26,4 +26,8 @@ bundle_identifier = com.tidelipom.mochi
 
 [ios]
 bundle_identifier = com.tidelipom.mochi
+
+[display]
+width = 1280
+height = 720
 
