@@ -97,6 +97,86 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "score"
+  prototype: "/game/score/score.go"
+  position {
+    x: 339.0
+    y: 677.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 1.0
+  }
+}
+instances {
+  id: "score1"
+  prototype: "/game/score/score.go"
+  position {
+    x: 1207.0
+    y: 521.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 1.0
+  }
+}
+instances {
+  id: "score2"
+  prototype: "/game/score/score.go"
+  position {
+    x: 4060.0
+    y: 367.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 1.0
+  }
+}
+instances {
+  id: "gui_score"
+  prototype: "/game/score/gui_score.go"
+  position {
+    x: -44.0
+    y: 328.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "level"
