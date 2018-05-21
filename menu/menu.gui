@@ -1,4 +1,8 @@
 script: "/menu/menu.gui_script"
+textures {
+  name: "start"
+  texture: "/menu/images_menu/start.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -7,8 +11,8 @@ background_color {
 }
 nodes {
   position {
-    x: 568.0
-    y: 400.0
+    x: 298.0
+    y: 637.0
     z: 0.0
     w: 1.0
   }
@@ -101,8 +105,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: 5.0
+    y: -1.0
     z: 0.0
     w: 1.0
   }
@@ -132,9 +136,10 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "GAME"
+  text: "GAME\n"
+  ""
   font: "dirtylarry"
-  id: "game/label"
+  id: "game/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -158,6 +163,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
@@ -165,8 +171,8 @@ nodes {
 }
 nodes {
   position {
-    x: 568.0
-    y: 270.0
+    x: 298.0
+    y: 514.0
     z: 0.0
     w: 1.0
   }
@@ -259,8 +265,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: -8.0
+    y: 1.0
     z: 0.0
     w: 1.0
   }
@@ -292,7 +298,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "CONTROLS"
   font: "dirtylarry"
-  id: "controls/label"
+  id: "controls/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -316,10 +322,65 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 1
   overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
+}
+nodes {
+  position {
+    x: 639.0
+    y: 361.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.496
+    y: 0.499
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 2560.0
+    y: 1440.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "start/landingpage"
+  id: "box"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
 }
 layers {
   name: "below"

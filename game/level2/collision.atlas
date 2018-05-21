@@ -1,0 +1,6 @@
+images {
+  image: "/game/assets/images/collision_level.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

@@ -1,0 +1,12 @@
+images {
+  image: "/game/assets/images/jump_button.png"
+}
+images {
+  image: "/game/assets/images/arrow.png"
+}
+images {
+  image: "/game/assets/images/jump10.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

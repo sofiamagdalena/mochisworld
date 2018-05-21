@@ -4,6 +4,8 @@ local remotecontrol = require "remote.control"
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0.52, 0.80, 1, 0) } )
+	
 	local jump_button = gui.get_node("jump/bg")
 	local duck_button = gui.get_node("duck/bg")
 	local left_button = gui.get_node("left/bg")
@@ -20,6 +22,7 @@ function init(self)
 	end)
 end
 
+
 function update(self, dt)
 	remotecontrol.update(dt)
 end
@@ -31,7 +34,7 @@ function on_input(self, action_id, action)
 	elseif jump.released_now then
 		remotecontrol.send_player_action("stop")
 	end
-	
+
 	local duck = dirtylarry.button("duck", action_id, action, function() end)
 	if duck.pressed_now then
 		remotecontrol.send_player_action("duck")
@@ -57,3 +60,4 @@ function on_reload(self)
 	-- Add input-handling code here
 	-- Remove this function if not needed
 end
+

@@ -1,3 +1,6 @@
+images {
+  image: "/game/assets/images/logotyp.png"
+}
 animations {
   id: "walk"
   images {

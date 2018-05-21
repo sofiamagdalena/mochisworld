@@ -1,0 +1,8 @@
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		pprint("lkjhgfd")
+		msg.post("/player#script", "teleport_to_next_level")
+	end
+end

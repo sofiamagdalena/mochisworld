@@ -177,6 +177,26 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "next_level_portal"
+  prototype: "/game/level2/next_level_portal.go"
+  position {
+    x: 322.0
+    y: 474.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "level"
@@ -196,7 +216,7 @@ embedded_instances {
   "  }\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
+  "  id: \"collisionobject_level2\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"/game/level.tilemap\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
@@ -205,6 +225,7 @@ embedded_instances {
   "restitution: 0.5\\n"
   "group: \\\"ground\\\"\\n"
   "mask: \\\"player\\\"\\n"
+  "mask: \\\"collision\\\"\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
   "locked_rotation: false\\n"
