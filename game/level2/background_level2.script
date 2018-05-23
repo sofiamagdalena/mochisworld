@@ -1,0 +1,9 @@
+-- file: background1.script
+
+function init(self)
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0, 0, 0, 0) } )
+end
+
+-- the background is a tilemap in a gameobject
+-- we move the gameobject for the parallax effect
+
