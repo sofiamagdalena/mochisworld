@@ -1,7 +1,7 @@
 [project]
-title = Mochi's World
+title = Mochis World
 version = 0.4
-dependencies = https://github.com/britzl/defold-luasocket/archive/0.11.zip,https://github.com/britzl/defnet/archive/4.0.0.zip,https://github.com/britzl/platypus/archive/1.1.0.zip,https://github.com/britzl/defold-orthographic/archive/2.2.5.zip,https://github.com/britzl/gooey/archive/6.0.3.zip,https://github.com/britzl/monarch/archive/2.3.0.zip,https://github.com/britzl/defold-timer/archive/1.1.1.zip
+dependencies = https://github.com/britzl/defold-luasocket/archive/0.11.zip,https://github.com/britzl/defnet/archive/4.0.0.zip,https://github.com/britzl/platypus/archive/1.1.0.zip,https://github.com/britzl/defold-orthographic/archive/2.2.5.zip,https://github.com/britzl/gooey/archive/6.2.0.zip,https://github.com/britzl/monarch/archive/2.3.0.zip,https://github.com/britzl/defold-timer/archive/1.1.1.zip
 
 [bootstrap]
 main_collection = /main/main.collectionc
