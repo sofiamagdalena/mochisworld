@@ -22,6 +22,8 @@ local function init_game_server(self)
 			msg.post((levels[self.current_level] .. ":/player#script"), "right")
 		elseif message.action == "stop" then
 			msg.post((levels[self.current_level] .. ":/player#script"), "stop")
+		elseif message.action == "show_menu" then
+			msg.post("#", "show_menu")
 		end
 	end)
 end

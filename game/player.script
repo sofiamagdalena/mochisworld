@@ -6,6 +6,7 @@ local ACTION_LEFT = hash("left")
 local ACTION_RIGHT = hash("right")
 local ACTION_JUMP = hash("jump")
 local ACTION_DUCK = hash("duck")
+local ACTION_GOTO_MENU = hash("menu")
 
 local MSG_LEFT = hash("left")
 local MSG_RIGHT = hash("right")
@@ -138,5 +139,8 @@ function on_input(self, action_id, action)
 		elseif action.released then
 			self.move_duck = false
 		end	
+	elseif action_id == ACTION_GOTO_MENU then
+		msg.post("default:/controller#script", "show_menu")
 	end
+	
 end
