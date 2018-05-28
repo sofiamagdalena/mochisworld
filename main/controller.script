@@ -51,6 +51,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("teleport_player_to_next_level") then
 		go_to_next_level(self)
 	elseif message_id == hash("show_menu") then
+		remotecontrol.stop()
 		monarch.show(hash("menu"))
 		msg.post("/game#game_sound", "stop_sound", {delay = 1, gain = 0.5})
 		msg.post("/menu#menu_sound", "play_sound", {delay = 1, gain = 0.5})	
