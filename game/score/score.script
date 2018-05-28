@@ -2,7 +2,7 @@
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then 
 		go.delete() 
-		msg.post("/gui_score#score", "add_score", {score = 100})
+		msg.post("default:/controller#script", "increase_score")
 	end
 end
 

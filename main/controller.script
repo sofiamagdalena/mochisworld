@@ -8,6 +8,7 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 
 	self.current_level = 1
+	self.current_number_of_stars = 0
 end
 
 local function init_game_server(self)
@@ -28,9 +29,18 @@ local function init_game_server(self)
 	end)
 end
 
+local function show_level_complete(self)
+	monarch.show(hash("level_complete"), {}, { stars=self.current_number_of_stars})
+end
+
+local function show_level(self, level)
+	self.current_number_of_stars = 0
+	monarch.show(level)
+end
+
 local function go_to_next_level(self)
 	self.current_level = self.current_level + 1
-	monarch.show(levels[self.current_level])
+	show_level(self, levels[self.current_level])
 end
 
 function final(self)  
@@ -42,13 +52,17 @@ function update(self, dt)
 	remotecontrol.update(dt)
 end
 
-function update_score(self, score_to_add)
-	self.score = self.score + score_to_add
-	msg.post("game:/score#score", "update_score", { score = self.score })
+function update_score(self)
+	self.current_number_of_stars = self.current_number_of_stars + 1
+	msg.post((levels[self.current_level] .. ":/gui_score#score"), "add_score", {score = 100})
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("teleport_player_to_next_level") then
+	if message_id == hash("level_complete") then
+		show_level_complete(self)
+	elseif message_id == hash("restart_level") then
+		show_level(self, levels[self.current_level])
+	elseif message_id == hash("next_level") then
 		go_to_next_level(self)
 	elseif message_id == hash("show_menu") then
 		remotecontrol.stop()
@@ -63,6 +77,8 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("show_controls") then
 		msg.post("/menu#menu_sound", "stop_sound")
 		monarch.show(hash("controls"))
+	elseif message_id == hash("increase_score") then
+		update_score(self)
 	end
 end
 
