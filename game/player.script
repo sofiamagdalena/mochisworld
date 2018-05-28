@@ -1,5 +1,5 @@
 local platypus = require "platypus.platypus"
-local remotecontrol = require "remote.control"
+
 local monarch = require "monarch.monarch"
 
 local ACTION_LEFT = hash("left")
@@ -12,7 +12,6 @@ local MSG_RIGHT = hash("right")
 local MSG_JUMP = hash("jump")
 local MSG_ABORT_JUMP = hash("abort_jump")
 
-local levels = {"game", "level2"}
 
 local function play_animation(self, animation)
 	if self.current_animation ~= animation then
@@ -44,12 +43,6 @@ local function abort_jump(self)
 	self.platformer.abort_jump()
 end
 
--- TODO: Find another place for this
-local function go_to_next_level(self)
-	self.current_level = self.current_level + 1
-	monarch.show(levels[self.current_level])
-end
-
 function init(self)
 	self.platformer = platypus.create({
 		gravity = -1100,
@@ -63,25 +56,6 @@ function init(self)
 	})
 	msg.post(".", "acquire_input_focus")
 
-	self.current_level = 0
-	
-	remotecontrol.server(function(message, from_ip, from_port)
-		print("received action", message.action)
-		if message.action == "jump" then
-			self.move_up = true
-		elseif message.action == "duck" then
-			self.move_duck = true
-		elseif message.action == "left" then
-			self.move_left = true
-		elseif message.action == "right" then
-			self.move_right = true
-		elseif message.action == "stop" then
-			self.move_left = false
-			self.move_right = false
-			self.move_up = false
-			self.move_duck = false
-		end
-	end)
 end
 
 local function update_animation(self)
@@ -117,12 +91,23 @@ function update(self, dt)
 	update_animation(self)
 
 	self.platformer.update(dt)
-	remotecontrol.update(dt)
+
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("teleport_to_next_level") then
-		go_to_next_level(self)
+	if message_id == hash("jump") then
+		self.move_up = true
+	elseif message_id == hash("duck") then
+		self.move_duck = true
+	elseif message_id == hash("left") then
+		self.move_left = true
+	elseif message_id == hash("right") then
+		self.move_right = true
+	elseif message_id == hash("stop") then
+		self.move_up = false
+		self.move_duck = false
+		self.move_left = false
+		self.move_right = false
 	else 
 		self.platformer.on_message(message_id, message, sender)
 	end	

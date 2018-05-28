@@ -1,8 +1,34 @@
 local monarch = require "monarch.monarch"
+local remotecontrol = require "remote.control"
+
+local levels = {"game", "level2"}
 
 function init(self)
 	msg.post("#", "show_menu")
 	msg.post(".", "acquire_input_focus")
+
+	self.current_level = 1
+end
+
+local function init_game_server(self)
+	remotecontrol.server(function(message, from_ip, from_port)
+		if message.action == "jump" then
+			msg.post((levels[self.current_level] .. ":/player#script"), "jump")
+		elseif message.action == "duck" then
+			msg.post((levels[self.current_level] .. ":/player#script"), "duck")
+		elseif message.action == "left" then
+			msg.post((levels[self.current_level] .. ":/player#script"), "left")
+		elseif message.action == "right" then
+			msg.post((levels[self.current_level] .. ":/player#script"), "right")
+		elseif message.action == "stop" then
+			msg.post((levels[self.current_level] .. ":/player#script"), "stop")
+		end
+	end)
+end
+
+local function go_to_next_level(self)
+	self.current_level = self.current_level + 1
+	monarch.show(levels[self.current_level])
 end
 
 function final(self)  
@@ -11,20 +37,23 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	remotecontrol.update(dt)
 end
 
 function update_score(self, score_to_add)
 	self.score = self.score + score_to_add
 	msg.post("game:/score#score", "update_score", { score = self.score })
 end
+
 function on_message(self, message_id, message, sender)
-	if message_id == hash("show_menu") then
+	if message_id == hash("teleport_player_to_next_level") then
+		go_to_next_level(self)
+	elseif message_id == hash("show_menu") then
 		monarch.show(hash("menu"))
 		msg.post("/game#game_sound", "stop_sound", {delay = 1, gain = 0.5})
 		msg.post("/menu#menu_sound", "play_sound", {delay = 1, gain = 0.5})	
 	elseif message_id == hash("show_game") then
+		init_game_server(self)
 		monarch.show(hash("game"))
 		msg.post("/menu#menu_sound", "stop_sound")
 		msg.post("/game#game_sound", "play_sound", {delay = 1, gain = 0.5})
