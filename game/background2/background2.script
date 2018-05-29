@@ -4,8 +4,8 @@
 -- we move the gameobject for the parallax effect
 
 function update(self, dt)
-	-- decrease x-position by 0.5 units per frame for parallax effect
+	-- decrease x-position by 0.4 units per frame for parallax effect
 	local p = go.get_position()
-	p.x = p.x - 0.5
+	p.x = p.x - 0.4
 	go.set_position(p)
 end

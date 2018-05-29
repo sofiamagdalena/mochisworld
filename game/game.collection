@@ -5,7 +5,7 @@ instances {
   position {
     x: 157.0
     y: 729.0
-    z: 0.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -101,8 +101,8 @@ instances {
   id: "score"
   prototype: "/game/score/score.go"
   position {
-    x: 339.0
-    y: 677.0
+    x: 3331.0
+    y: 1497.0
     z: 0.0
   }
   rotation {
@@ -121,9 +121,9 @@ instances {
   id: "score1"
   prototype: "/game/score/score.go"
   position {
-    x: 1207.0
-    y: 521.0
-    z: 0.0
+    x: 1556.0
+    y: 586.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -141,9 +141,9 @@ instances {
   id: "score2"
   prototype: "/game/score/score.go"
   position {
-    x: 4060.0
-    y: 367.0
-    z: 0.0
+    x: 2016.0
+    y: 1875.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -181,8 +181,8 @@ instances {
   id: "next_level_portal"
   prototype: "/game/level2/next_level_portal.go"
   position {
-    x: 643.0
-    y: 1191.0
+    x: 4368.0
+    y: 1850.0
     z: 0.0
   }
   rotation {
@@ -192,8 +192,8 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
+    x: 3.0
+    y: 3.0
     z: 1.0
   }
 }
@@ -202,7 +202,7 @@ embedded_instances {
   id: "level"
   data: "components {\n"
   "  id: \"tilemap\"\n"
-  "  component: \"/game/level.tilemap\"\n"
+  "  component: \"/game/level1.tilemap\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -218,7 +218,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"collisionobject_level2\"\n"
   "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"/game/level.tilemap\\\"\\n"
+  "  data: \"collision_shape: \\\"/game/level1.tilemap\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
   "friction: 0.1\\n"

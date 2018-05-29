@@ -22,12 +22,12 @@ local function play_animation(self, animation)
 end
 
 local function left(self)
-	self.platformer.left(200)
+	self.platformer.left(250)
 	sprite.set_hflip("#sprite", true)
 end
 
 local function right(self)
-	self.platformer.right(200)
+	self.platformer.right(250)
 	sprite.set_hflip("#sprite", false)
 end
 

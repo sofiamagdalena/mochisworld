@@ -41,8 +41,8 @@ instances {
   id: "score"
   prototype: "/game/score/score.go"
   position {
-    x: 339.0
-    y: 677.0
+    x: 3777.0
+    y: 1843.0
     z: 0.0
   }
   rotation {
@@ -61,8 +61,8 @@ instances {
   id: "score1"
   prototype: "/game/score/score.go"
   position {
-    x: 1207.0
-    y: 521.0
+    x: -4175.0
+    y: 986.0
     z: 0.0
   }
   rotation {
@@ -81,8 +81,8 @@ instances {
   id: "score2"
   prototype: "/game/score/score.go"
   position {
-    x: 4060.0
-    y: 367.0
+    x: -447.0
+    y: 3592.0
     z: 0.0
   }
   rotation {
@@ -144,7 +144,7 @@ instances {
   position {
     x: 263.0
     y: 315.0
-    z: 0.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -164,6 +164,26 @@ instances {
   position {
     x: 0.0
     y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "next_level_portal"
+  prototype: "/game/level2/next_level_portal.go"
+  position {
+    x: 2312.0
+    y: 3484.0
     z: 0.0
   }
   rotation {

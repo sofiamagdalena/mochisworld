@@ -40,7 +40,11 @@ end
 
 local function go_to_next_level(self)
 	self.current_level = self.current_level + 1
-	show_level(self, levels[self.current_level])
+	if (self.current_level > table.getn(levels)) then
+		monarch.show("last_screen")
+	else
+		show_level(self, levels[self.current_level])
+	end
 end
 
 function final(self)  
